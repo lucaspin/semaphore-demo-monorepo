@@ -13,5 +13,5 @@ blocks:
             - echo "something" > /tmp/something.txt
             - artifact push job /tmp/something.txt
             - touch /tmp/nothing.txt
-            - artifact push job /tmp/nothing.txt
+            - artifact push job /tmp/nothing.txt -v
 

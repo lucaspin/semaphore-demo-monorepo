@@ -11,6 +11,8 @@ import (
 	mux "github.com/gorilla/mux"
 )
 
+// Just changing this for fun
+
 type BillingInfo struct {
 	LastCharge string `json:"last_charge"`
 	Discount   string `json:"discount"`

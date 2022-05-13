@@ -16,6 +16,8 @@ type BillingInfo struct {
 	Discount   string `json:"discount"`
 }
 
+// Just testing monorepo
+
 func BillingInfoHandler(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 

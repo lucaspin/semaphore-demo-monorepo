@@ -12,22 +12,11 @@ blocks:
       prologue:
         commands:
           - checkout
-          - cd services/ui
-          - sem-version elixir 1.9
-          - cache restore
-          - mix local.hex --force
-          - mix local.rebar --force
-          - mix deps.get
-          - mix deps.compile
-          - cache store
 
       jobs:
         - name: Lint
           commands:
-            - mix credo
-        - name: Test
-          commands:
-            - mix test
+            - echo Lint
 
   - name: "\U0001F64E — User Service"
     dependencies: []
@@ -37,20 +26,10 @@ blocks:
       prologue:
         commands:
           - checkout
-          - cd services/users
-          - sem-version ruby 2.5
-          - cache restore
-          - bundle install
-          - cache store
-
       jobs:
         - name: Lint
           commands:
-            - bundle exec rubocop
-
-        - name: Test
-          commands:
-            - bundle exec ruby test.rb
+            - echo Lint
 
   - name: "\U0001F4B0 — Billing Service"
     dependencies: []
@@ -60,16 +39,7 @@ blocks:
       prologue:
         commands:
           - checkout
-          - cd services/billing
-          - sem-version go 1.14
-          - cache restore
-          - go get ./...
-          - cache store
       jobs:
-        - name: Lint
-          commands:
-            - gofmt -l .
-
         - name: Test
           commands:
-            - go test ./...go
+            - echo test

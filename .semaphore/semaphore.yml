@@ -12,6 +12,7 @@ blocks:
     task:
       prologue:
         commands:
+          - echo hello
           - checkout
           - cd services/ui
           - sem-version elixir 1.9
